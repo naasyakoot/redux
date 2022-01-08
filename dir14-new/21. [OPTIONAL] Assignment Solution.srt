@@ -1,0 +1,623 @@
+1
+00:00:02,060 --> 00:00:04,750
+The where are you successful Let's solve that together.
+
+2
+00:00:04,880 --> 00:00:11,600
+And for that let's first of all quit and start and install the two packages we need whether it be dash
+
+3
+00:00:11,600 --> 00:00:16,800
+dash save and then it's read X and re-act redux.
+
+4
+00:00:16,820 --> 00:00:22,480
+These are the two packages we need to hit enter to download and add them to your node modules folder.
+
+5
+00:00:22,550 --> 00:00:26,960
+And once this is done you can restart NPM start.
+
+6
+00:00:26,960 --> 00:00:32,870
+Now of course we want to use these packages and for that first of all create a new folder in my source
+
+7
+00:00:32,900 --> 00:00:39,670
+folder the store folder and then there I'll create my new reducer Doug as fall.
+
+8
+00:00:39,800 --> 00:00:46,010
+I don't really need to split this into multiple producers here because we only have one feature adding
+
+9
+00:00:46,010 --> 00:00:46,820
+persons.
+
+10
+00:00:46,830 --> 00:00:52,670
+So there are even different areas in this app we will work with multiple reducers again.
+
+11
+00:00:52,730 --> 00:00:55,400
+Once you work on the course project again.
+
+12
+00:00:55,460 --> 00:01:04,070
+So this is the one producer we add it now here how do we set this up in the reducer fall.
+
+13
+00:01:04,100 --> 00:01:09,330
+I want to create an initial state does this the state we start with in this app.
+
+14
+00:01:09,530 --> 00:01:15,500
+Its a javascript object where we have a persons array which is empty just as the initial state in the
+
+15
+00:01:15,500 --> 00:01:17,730
+person's container here.
+
+16
+00:01:17,940 --> 00:01:23,620
+Then we have our producer function and I'll use to ESX function syntax.
+
+17
+00:01:23,700 --> 00:01:26,470
+You can of course also use to erase five syntax.
+
+18
+00:01:26,730 --> 00:01:29,980
+You are all named as producer and we get two things.
+
+19
+00:01:30,000 --> 00:01:35,820
+We get the state and we get the action which was dispatched and the status initially set to initial
+
+20
+00:01:35,820 --> 00:01:37,770
+state.
+
+21
+00:01:37,770 --> 00:01:45,720
+Now inside Daedra to use for function on now add a switch statement where I switched the type property
+
+22
+00:01:45,720 --> 00:01:46,820
+on my action.
+
+23
+00:01:46,830 --> 00:01:54,770
+I receive and remember typed is not optional you contrie rename this type is expected by the redux package.
+
+24
+00:01:55,200 --> 00:02:00,470
+And then I want to do different things for adding and deleting users before I had this.
+
+25
+00:02:00,500 --> 00:02:02,840
+I'll export my reducer here.
+
+26
+00:02:02,880 --> 00:02:07,020
+Export this as the default of this file.
+
+27
+00:02:07,040 --> 00:02:12,200
+Now for the actions all create actions dodgiest follow.
+
+28
+00:02:12,230 --> 00:02:13,740
+This is optional.
+
+29
+00:02:13,760 --> 00:02:15,940
+You could also work with hardcoded string.
+
+30
+00:02:15,940 --> 00:02:23,540
+I did the fires but to reduce the risk of mistyping all UCD export at Constans and the actions fall.
+
+31
+00:02:23,840 --> 00:02:28,940
+I'll have one for adding a person and you can name this whatever you want.
+
+32
+00:02:29,060 --> 00:02:38,590
+I'll give it a identifier of ADD person and one for removing a person hence also getting an identifier
+
+33
+00:02:38,590 --> 00:02:40,290
+of remove person.
+
+34
+00:02:40,360 --> 00:02:42,010
+That's all in my actions.
+
+35
+00:02:42,020 --> 00:02:43,290
+J.S. fall.
+
+36
+00:02:43,450 --> 00:02:54,220
+I can now import this in my reducer So there or import everything from does actions fall as action types
+
+37
+00:02:54,820 --> 00:03:01,400
+from dot slash actions and then I want to check the two different cases I'll have.
+
+38
+00:03:01,670 --> 00:03:11,690
+I'll have the case that I have the action type at person when to return my updated state here.
+
+39
+00:03:11,990 --> 00:03:16,790
+I'll then have the case that we have action types.
+
+40
+00:03:16,850 --> 00:03:31,420
+Remove person and also return my updated state to your and in all cases I want to return my old state.
+
+41
+00:03:31,420 --> 00:03:39,280
+So that is at the end just not inside but outside of the switch statement therefore now with this set
+
+42
+00:03:39,280 --> 00:03:41,660
+up the reducer is kind of finished well.
+
+43
+00:03:41,680 --> 00:03:45,950
+We're not doing anything with our ad person removed person events here.
+
+44
+00:03:46,210 --> 00:03:54,280
+But there's something I will add soon before I add it let me add or connect my re-act up to you to state.
+
+45
+00:03:54,380 --> 00:04:02,590
+So in the index yes fall I'll import two things I'll import something from reader X and I'll import
+
+46
+00:04:02,590 --> 00:04:05,320
+something from re-act relax.
+
+47
+00:04:05,320 --> 00:04:16,920
+Do you know what well from relax it's create store and from re-act redux.
+
+48
+00:04:17,170 --> 00:04:27,610
+It's simply the provider component now all wrap my root app component with my provider component here
+
+49
+00:04:28,330 --> 00:04:30,460
+and then I need to create my story.
+
+50
+00:04:30,820 --> 00:04:37,420
+So create a new constant store maybe or whatever you want to name it and execute create story and to
+
+51
+00:04:37,420 --> 00:04:48,960
+create store I need to pass my producer so so import my producer here reducer from that slash store
+
+52
+00:04:49,600 --> 00:04:51,460
+reducer.
+
+53
+00:04:51,510 --> 00:04:55,590
+This is now what it has to create store.
+
+54
+00:04:55,720 --> 00:04:59,610
+Now with that past our application is generally connected.
+
+55
+00:04:59,640 --> 00:05:03,720
+And we got the store which is created by the redux package.
+
+56
+00:05:03,720 --> 00:05:08,600
+Now of course we need to fill our producer with some life.
+
+57
+00:05:08,730 --> 00:05:12,250
+We already have the logic in our persons container.
+
+58
+00:05:12,570 --> 00:05:20,430
+All get rid of the estate there but I can take the logic from the person added handler and person deleted
+
+59
+00:05:20,430 --> 00:05:21,370
+handler.
+
+60
+00:05:21,390 --> 00:05:23,670
+I'll put it into my reducer.
+
+61
+00:05:23,970 --> 00:05:27,850
+So your person added I create a new person.
+
+62
+00:05:28,050 --> 00:05:31,350
+And no I don't call said state.
+
+63
+00:05:31,350 --> 00:05:36,700
+Instead here I return a copy of my old state here.
+
+64
+00:05:36,840 --> 00:05:40,370
+Theoretically that wouldn't be needed since we only have the person's property.
+
+65
+00:05:40,380 --> 00:05:44,630
+But imagine you have more properties you don't want to kill these other properties.
+
+66
+00:05:44,640 --> 00:05:53,650
+So copy all the properties and then override the person's property with the state persons.
+
+67
+00:05:53,850 --> 00:06:02,690
+And now concat the new person to it just as we did before locally in the container component.
+
+68
+00:06:02,700 --> 00:06:07,410
+And now I can't get rid of this sad state here and the producer of course doesn't make sense here.
+
+69
+00:06:07,410 --> 00:06:15,300
+Now I just have to new person which I concat to my persons aere thus creating a new array which replaces
+
+70
+00:06:15,300 --> 00:06:17,030
+the old person's sorry.
+
+71
+00:06:17,430 --> 00:06:23,810
+Now for a remove person I can also copy the logic from there.
+
+72
+00:06:23,810 --> 00:06:31,400
+Actually I can't just copy the folder logic here go back into the producer and then return a copy of
+
+73
+00:06:31,400 --> 00:06:38,780
+my old state properties and Zeff person's equal to state persons and now change the folder.
+
+74
+00:06:38,780 --> 00:06:45,870
+Call now here I expect to get the idea of the person which should be deleted and I expect us to get
+
+75
+00:06:45,870 --> 00:06:47,430
+this on my action.
+
+76
+00:06:47,520 --> 00:06:54,800
+So action per snidey all have to make sure that we pass this ID along with the action when we dispatch
+
+77
+00:06:54,810 --> 00:06:55,540
+it.
+
+78
+00:06:56,190 --> 00:07:03,370
+That's the finished producer with that in the container component we can simply delete person added
+
+79
+00:07:03,390 --> 00:07:06,230
+handler and present delete that handler.
+
+80
+00:07:06,810 --> 00:07:09,590
+Now here on person added an on clicked.
+
+81
+00:07:09,840 --> 00:07:17,460
+We now want to instead dispatch our actions so first of all let's import the actions so import everything
+
+82
+00:07:17,490 --> 00:07:22,220
+as action types or whatever do you want to name it from the store folder.
+
+83
+00:07:22,230 --> 00:07:24,840
+From the actions file there.
+
+84
+00:07:25,020 --> 00:07:26,190
+Just like that.
+
+85
+00:07:26,700 --> 00:07:31,020
+And now with that I can create these two new constants.
+
+86
+00:07:31,080 --> 00:07:40,350
+Map state 2 props to get access to my state and map dispatch to props to get action access to these
+
+87
+00:07:40,680 --> 00:07:45,820
+dispatched the dispatch function and be able to dispatch actions.
+
+88
+00:07:45,920 --> 00:07:53,010
+I'll start with mapping States to prop's as you learned this expects to hold a function which will receive
+
+89
+00:07:53,010 --> 00:07:59,830
+state as an input passed into the function automatically by redux and in the function body.
+
+90
+00:07:59,830 --> 00:08:11,640
+Here we should return a javascript object where we map a slice of our X state to something we'll be
+
+91
+00:08:11,640 --> 00:08:16,860
+able to access as a property in our container or component.
+
+92
+00:08:16,860 --> 00:08:20,600
+So there I want to have let's say a property P R S.
+
+93
+00:08:20,670 --> 00:08:25,140
+You could name it persons or just don't name it like this to make it really clear that it's not the
+
+94
+00:08:25,140 --> 00:08:27,210
+same as our state.
+
+95
+00:08:27,210 --> 00:08:33,960
+So P R S could be mapped to state and there the persons property.
+
+96
+00:08:33,960 --> 00:08:40,260
+Now here you have to make sure that you of course spelled a property name here exactly as it's spelled
+
+97
+00:08:40,460 --> 00:08:48,530
+in the reducer So if that we get access to the persons in our container component.
+
+98
+00:08:48,900 --> 00:08:55,260
+Now for map this page to props we all store a function in this constant a function which receives the
+
+99
+00:08:55,260 --> 00:09:04,910
+dispatch function as an input and then here we all the return object where we map props to dispatch
+
+100
+00:09:04,910 --> 00:09:06,830
+function executions.
+
+101
+00:09:07,310 --> 00:09:14,680
+And here I map my property for adding persons and deleting persons.
+
+102
+00:09:14,790 --> 00:09:22,400
+So maybe on ad a person could be an anonymous function where I call this patch in the end.
+
+103
+00:09:22,780 --> 00:09:33,120
+And now I dispatch action types add person and I'll add another prop on removed person here.
+
+104
+00:09:33,170 --> 00:09:37,120
+I also dispatch action types.
+
+105
+00:09:37,380 --> 00:09:43,500
+Remove person but here I also need to pass a payload and generally important.
+
+106
+00:09:43,500 --> 00:09:48,640
+This has to be a javascript object so you don't just pass the string as an argument.
+
+107
+00:09:48,720 --> 00:09:53,070
+You pass a javascript object with the type of death string.
+
+108
+00:09:53,160 --> 00:09:59,820
+That's a common gotcha you get wrong set to type here in the javascript object and the type that is
+
+109
+00:09:59,820 --> 00:10:06,270
+your action type still for removing a person just passing the type isn't enough.
+
+110
+00:10:06,270 --> 00:10:08,750
+We also have to pass the idea of the poorest.
+
+111
+00:10:08,760 --> 00:10:09,870
+We want to remove.
+
+112
+00:10:10,530 --> 00:10:19,110
+So I expect to get it id as an argument in this function so that I can then pass whatever I expect in
+
+113
+00:10:19,120 --> 00:10:28,620
+the reducer in this case person idea as a property on the action so that I pass per ID here by setting
+
+114
+00:10:28,620 --> 00:10:34,620
+that property in the object dispatch equal to the ID I receive here.
+
+115
+00:10:34,950 --> 00:10:42,660
+And now we just have to use that correctly in our component GSX code for adding persistence and simple
+
+116
+00:10:42,830 --> 00:10:43,910
+is simply execute.
+
+117
+00:10:43,950 --> 00:10:49,430
+This props and so on added person for deleting.
+
+118
+00:10:49,590 --> 00:11:00,240
+I will still use an anonymous function as we did before to Den X-ists dis prop's on removed person and
+
+119
+00:11:00,240 --> 00:11:06,290
+still press the prison ID as an argument so that it reaches dysfunction here.
+
+120
+00:11:06,300 --> 00:11:10,390
+This ID and we can dispatch it with dead.
+
+121
+00:11:10,400 --> 00:11:12,780
+We're managing everything from Rydex.
+
+122
+00:11:12,920 --> 00:11:18,960
+We connected the dispatch functions with props and our state.
+
+123
+00:11:19,390 --> 00:11:27,700
+Let's now see if it works that save all the false and we see that we get carried read persons of knol.
+
+124
+00:11:28,050 --> 00:11:32,440
+So on our state we fail to read this.
+
+125
+00:11:32,640 --> 00:11:40,550
+Well the reason is of course in the container component to the persons I map here still refer to this
+
+126
+00:11:40,560 --> 00:11:42,300
+state persons.
+
+127
+00:11:42,430 --> 00:11:45,150
+That doesn't exist anymore we deleted this.
+
+128
+00:11:45,150 --> 00:11:49,840
+Instead we should take this p r s argument on the prop's not on the state.
+
+129
+00:11:49,950 --> 00:11:54,490
+So this props P R S is now correct.
+
+130
+00:11:54,660 --> 00:11:59,640
+Now with dad if we save it and we go back we reload the application.
+
+131
+00:11:59,960 --> 00:12:03,770
+We still get error or do you know why
+
+132
+00:12:06,770 --> 00:12:11,830
+well we defined map state to props and map dispatch to props.
+
+133
+00:12:11,840 --> 00:12:14,320
+But what are we not doing.
+
+134
+00:12:14,330 --> 00:12:17,800
+We're not informing our component about these constants.
+
+135
+00:12:18,020 --> 00:12:22,030
+Just adding the concepts like this doesn't do anything.
+
+136
+00:12:22,490 --> 00:12:32,080
+We need to connect our component to our state with DS to constants with DS functions to constants hold
+
+137
+00:12:32,080 --> 00:12:40,490
+in the end as arguments and for that you'll learn that we can import something from re-act read X and
+
+138
+00:12:40,490 --> 00:12:45,040
+conveniently this something is even named.
+
+139
+00:12:45,040 --> 00:12:46,540
+Connect.
+
+140
+00:12:46,640 --> 00:12:55,250
+So we import the connect function from re-act redux and then we add it down there to the export and
+
+141
+00:12:55,250 --> 00:12:58,020
+pass map state to props.
+
+142
+00:12:58,220 --> 00:13:09,290
+So this constant here as the first argument and then map dispatch to prop's So this argument here is
+
+143
+00:13:09,320 --> 00:13:10,460
+constant here.
+
+144
+00:13:11,320 --> 00:13:18,280
+Rops as the second argument and then you learned that connect with these two arguments returns a function
+
+145
+00:13:18,730 --> 00:13:23,880
+which we also execute and where we pass the person's component to.
+
+146
+00:13:24,190 --> 00:13:27,880
+And now with that we got our container connected.
+
+147
+00:13:28,300 --> 00:13:35,560
+But if we go back to the index file you'll see that once we wrap our app component with the provider
+
+148
+00:13:36,100 --> 00:13:39,370
+and we do create a store with create store.
+
+149
+00:13:39,370 --> 00:13:46,660
+We never make the final step of passing death's door to a provider because of course that's coming from
+
+150
+00:13:46,660 --> 00:13:52,450
+two different packages so we have to make that connection and we do that by adding the store property
+
+151
+00:13:52,510 --> 00:14:00,010
+on the provider and setting it equal to the store constant which holds a reference to the store we created
+
+152
+00:14:00,010 --> 00:14:01,370
+with create store.
+
+153
+00:14:01,810 --> 00:14:09,190
+And now with that if we save all the files we have a running application again where we can click at
+
+154
+00:14:09,190 --> 00:14:15,880
+person and remove the persons and as you see it removes the correct one.
+
+155
+00:14:16,000 --> 00:14:17,890
+So that's the assignment solved.
+
+156
+00:14:18,070 --> 00:14:21,210
+A little bit of redux and re-act redux practice.
